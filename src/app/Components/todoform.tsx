@@ -4,7 +4,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import * as z from 'zod';
-
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Textarea } from "@/components/ui/textarea"
@@ -35,9 +34,8 @@ const TodoForm = ({defaultValues, onSubmit, submitButtonText, isSubmitting}: Tod
             <FormField control={form.control} name="title" render={({field}) => (
                 <FormItem>
                     <FormLabel>Title</FormLabel>
-
                     <FormControl>
-                        <Input {...field} />
+                        <Input {...field} type="text" />
                     </FormControl>
 
                     <FormMessage />
