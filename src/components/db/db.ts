@@ -1,7 +1,8 @@
 import { PrismaClient } from "@prisma/client";
+import { withAccelerate } from "@prisma/extension-accelerate";
 
 const prismaClientSignleton = () => {
-    return new PrismaClient();
+    return new PrismaClient().$extends(withAccelerate());
 };
 
 type prismaClientSignleton = ReturnType<typeof prismaClientSignleton>;
